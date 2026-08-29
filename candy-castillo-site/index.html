@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Candy's Castillo — Doçura que a gente sente</title>
+    <meta name="description" content="Candy's Castillo: pirulito por R$ 1,25 e paçoca por R$ 1,00. Doces simples, gostosos e cheios de afeto. Pedido direto pelo WhatsApp." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">🍭</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress" id="preloaderProgress"></div>
+            </div>
+            <p class="preloader-text">Preparando um pouco de doçura...</p>
+        </div>
+    </div>
+
+    <!-- POPUP UAU - SENAC -->
+    <div class="popup-overlay active" id="popupSenac">
+        <div class="popup-senac">
+            <button class="popup-close" id="popupClose">✕</button>
+            <div class="popup-glow"></div>
+            <div class="popup-icon-wrapper">
+                <span class="popup-icon-big">🍭</span>
+                <span class="popup-icon-small">🥜</span>
+                <span class="popup-icon-star">⭐</span>
+                <span class="popup-icon-sparkle">✨</span>
+            </div>
+            <h2 class="popup-title">🎓 <span class="pink">Senac</span> no <span class="gradient-text">controle</span>!</h2>
+            <div class="popup-body">
+                <div class="popup-alert">
+                    <span class="alert-icon">📢</span>
+                    <p><strong>Os pedidos aqui são <span class="pink">exclusivos</span> para a comunidade <span class="pink">Senac</span>!</strong></p>
+                </div>
+                <div class="popup-alert popup-alert-danger">
+                    <span class="alert-icon">🚫</span>
+                    <p><strong>Não realizamos entregas fora do Senac.</strong></p>
+                </div>
+                <div class="popup-divider"></div>
+                <div class="popup-info-box">
+                    <div class="info-box-icon">⏰</div>
+                    <div class="info-box-content">
+                        <p><strong>Entregas NA HORA DO INTERVALO</strong></p>
+                        <p class="info-box-sub">Não vamos até a sala para não atrapalhar a aula. 😉</p>
+                    </div>
+                </div>
+                <div class="popup-info-box popup-info-box-light">
+                    <div class="info-box-icon">🎯</div>
+                    <div class="info-box-content">
+                        <p><strong>Faça seu pedido pelos nossos canais oficiais:</strong></p>
+                    </div>
+                </div>
+                <div class="popup-buttons">
+                    <a href="https://wa.me/5551998700161" target="_blank" rel="noopener" class="popup-btn popup-btn-wa">
+                        <span class="btn-icon">💬</span>
+                        <span class="btn-label">WhatsApp</span>
+                        <span class="btn-badge">rápido</span>
+                    </a>
+                    <a href="https://ig.me/m/candycastillo2026" target="_blank" rel="noopener" class="popup-btn popup-btn-ig">
+                        <span class="btn-icon">📸</span>
+                        <span class="btn-label">Instagram</span>
+                        <span class="btn-badge">diretinho</span>
+                    </a>
+                </div>
+                <button class="popup-btn popup-btn-entendi" id="popupEntendi">
+                    <span>✨</span> Entendi, vou pedir!
+                    <span class="btn-arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a class="brand" href="#inicio">
+                <div class="brand-icon">
+                    <img src="img/candy-castillo-logo2.png" alt="Candy's Castillo" />
+                </div>
+                <span>Candy's Castillo</span>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#inicio" class="nav-link">🍬 Início</a>
+                <a href="#produtos" class="nav-link">🍭 Doces</a>
+                <a href="#missao" class="nav-link">💖 Nossa vibe</a>
+                <a href="#contato" class="nav-link nav-cta">✨ Fala com a gente</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="inicio" class="hero">
+            <div class="hero-bg">
+                <div class="hero-orbe orbe-1"></div>
+                <div class="hero-orbe orbe-2"></div>
+                <div class="hero-orbe orbe-3"></div>
+                <canvas id="heroCanvas"></canvas>
+            </div>
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        🍭 Feito com amor
+                    </div>
+                    <h1 class="hero-title">
+                        Um pouquinho mais de<br>
+                        <span class="gradient-text">doçura</span> no seu dia
+                    </h1>
+                    <p class="hero-lead">Pirulitos e paçocas que lembram a infância, mas com um toque especial. A gente faz com carinho, você saboreia com alegria.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#produtos">
+                            <span>Quero ver os doces</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a class="btn btn-secondary" href="#contato">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            Manda um oi
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="1.25">R$ 0,00</span>
+                            <span class="stat-label">Pirulito</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="1.00">R$ 0,00</span>
+                            <span class="stat-label">Paçoca</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="2.50">R$ 0,00</span>
+                            <span class="stat-label">Combo 1</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="3.00">R$ 0,00</span>
+                            <span class="stat-label">Combo 2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual reveal">
+                    <div class="hero-circle">
+                        <div class="circle-ring ring-1"></div>
+                        <div class="circle-ring ring-2"></div>
+                        <div class="circle-ring ring-3"></div>
+                        <div class="hero-circle-inner">
+                            <img src="img/candy-castillo-logo2.png" alt="Candy's Castillo" class="circle-logo" />
+                        </div>
+                    </div>
+                    <div class="floating-icons">
+                        <span class="float-icon" style="--delay:0s; --x:20%; --y:5%;">🥜</span>
+                        <span class="float-icon" style="--delay:1.2s; --x:85%; --y:15%;">⭐</span>
+                        <span class="float-icon" style="--delay:2.4s; --x:10%; --y:75%;">✨</span>
+                        <span class="float-icon" style="--delay:0.6s; --x:90%; --y:70%;">🎀</span>
+                        <span class="float-icon" style="--delay:1.8s; --x:50%; --y:-10%;">🌈</span>
+                        <span class="float-icon" style="--delay:3s; --x:-5%; --y:45%;">🎈</span>
+                        <span class="float-icon" style="--delay:0.3s; --x:75%; --y:-5%;">🍬</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-wave">
+                <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+                    <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#0b060b"/>
+                </svg>
+            </div>
+            <div class="scroll-indicator">
+                <span>Desce aí</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </div>
+        </section>
+
+        <!-- PRODUTOS -->
+        <section id="produtos" class="section products">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">🍬 Nossos queridinhos</span>
+                    <h2 class="section-title">Qual vai ser o <span class="pink">seu favorito</span>?</h2>
+                    <p class="section-sub">Dois clássicos que nunca saem de moda. Escolhe o seu e deixa a gente te mimar.</p>
+                </div>
+                <div class="grid" id="produtos-grid"></div>
+            </div>
+        </section>
+
+        <!-- MODAIS -->
+        <!-- Modal Normal -->
+        <div class="modal-overlay" id="modalNormal">
+            <div class="modal modal-pedido">
+                <button class="modal-close" id="modalNormalClose">✕</button>
+                <div class="modal-pedido-content">
+                    <div class="modal-pedido-header">
+                        <span class="pedido-emoji" id="normalEmoji">🍭</span>
+                        <h2 id="normalTitulo">Pirulito</h2>
+                        <p class="modal-sub">Simples, direto e gostoso</p>
+                    </div>
+                    <div class="modal-pedido-body">
+                        <div class="pedido-group">
+                            <label class="pedido-label">📦 Quantos você quer?</label>
+                            <div class="quantity-selector">
+                                <button class="qty-btn" id="normalQtyMinus">−</button>
+                                <span class="qty-value" id="normalQtyValue">1</span>
+                                <button class="qty-btn" id="normalQtyPlus">+</button>
+                            </div>
+                            <span class="qty-price" id="normalQtyPrice">R$ 1,25</span>
+                        </div>
+                        <div class="pedido-resumo">
+                            <div class="resumo-item"><span>Produto</span><span id="normalResumoProduto">Pirulito</span></div>
+                            <div class="resumo-item"><span>Quantidade</span><span id="normalResumoQuantidade">1x</span></div>
+                            <div class="resumo-item"><span>Total</span><span class="resumo-total" id="normalResumoTotal">R$ 1,25</span></div>
+                        </div>
+                    </div>
+                    <div class="modal-pedido-footer">
+                        <button class="btn btn-secondary" id="btnCancelarNormal">Cancelar</button>
+                        <button class="btn btn-primary" id="btnEnviarNormal">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            Quero pedir!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Correio Pirulito -->
+        <div class="modal-overlay" id="modalCorreioPirulito">
+            <div class="modal modal-correio">
+                <button class="modal-close" id="modalCorreioPirulitoClose">✕</button>
+                <div class="modal-correio-header">
+                    <span class="correio-big-icon">🍭</span>
+                    <h2>Correio Elegante - Pirulito</h2>
+                    <p class="modal-sub">Surpreenda alguém especial com um docinho + uma mensagem!</p>
+                </div>
+                <div class="correio-como-funciona">
+                    <div class="correio-steps">
+                        <div class="step"><span class="step-number">1</span><span class="step-text">Escolhe a ocasião</span></div>
+                        <div class="step-arrow">→</div>
+                        <div class="step"><span class="step-number">2</span><span class="step-text">Escreve a mensagem</span></div>
+                        <div class="step-arrow">→</div>
+                        <div class="step"><span class="step-number">3</span><span class="step-text">Recebe com carinho 💝</span></div>
+                    </div>
+                </div>
+                <div class="correio-selecao">
+                    <div class="correio-group">
+                        <label class="correio-label">🎯 Pra quem é?</label>
+                        <div class="correio-opcoes" id="pirulitoOcasioes">
+                            <button class="correio-opt active" data-ocasiao="Amizade"><span>🤝</span> Amizade</button>
+                            <button class="correio-opt" data-ocasiao="Crush"><span>💕</span> Crush</button>
+                            <button class="correio-opt" data-ocasiao="Aniversariante"><span>🎂</span> Aniversariante</button>
+                            <button class="correio-opt" data-ocasiao="Inimigo Elegante"><span>😈</span> Inimigo Elegante</button>
+                        </div>
+                        <div class="correio-precos-info">
+                            <span>💰 Cada um: <strong>R$ 1,50</strong></span>
+                            <span class="correio-inclui">(pirulito + mensagem + entrega)</span>
+                        </div>
+                    </div>
+                    <div class="correio-group">
+                        <label class="correio-label">📦 Quantidade</label>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="pirulitoQtyMinus">−</button>
+                            <span class="qty-value" id="pirulitoQtyValue">1</span>
+                            <button class="qty-btn" id="pirulitoQtyPlus">+</button>
+                        </div>
+                    </div>
+                    <div class="correio-group">
+                        <label class="correio-label">💝 Escreve aqui sua mensagem</label>
+                        <textarea class="correio-textarea" id="pirulitoMensagem" placeholder="Escreve com carinho..." maxlength="300"></textarea>
+                        <span class="correio-char-count" id="pirulitoCharCount">0 / 300</span>
+                    </div>
+                    <div class="correio-resumo">
+                        <div class="resumo-item"><span>Produto</span><span>Pirulito 🍭</span></div>
+                        <div class="resumo-item"><span>Ocasião</span><span id="pirulitoResumoOcasiao">Amizade 🤝</span></div>
+                        <div class="resumo-item"><span>Quantidade</span><span id="pirulitoResumoQuantidade">1x</span></div>
+                        <div class="resumo-item"><span>Total</span><span class="resumo-total" id="pirulitoResumoTotal">R$ 1,50</span></div>
+                        <div class="resumo-item resumo-mensagem"><span>Mensagem</span><span id="pirulitoResumoMensagem">Nenhuma mensagem</span></div>
+                    </div>
+                </div>
+                <div class="modal-pedido-footer">
+                    <button class="btn btn-secondary" id="btnCancelarPirulito">Voltar</button>
+                    <button class="btn btn-primary" id="btnEnviarPirulito">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Enviar no WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Correio Paçoca -->
+        <div class="modal-overlay" id="modalCorreioPacoca">
+            <div class="modal modal-correio">
+                <button class="modal-close" id="modalCorreioPacocaClose">✕</button>
+                <div class="modal-correio-header">
+                    <span class="correio-big-icon">🥜</span>
+                    <h2>Correio Elegante - Paçoca</h2>
+                    <p class="modal-sub">Surpreenda alguém especial com uma paçoca + uma mensagem!</p>
+                </div>
+                <div class="correio-como-funciona">
+                    <div class="correio-steps">
+                        <div class="step"><span class="step-number">1</span><span class="step-text">Escolhe a ocasião</span></div>
+                        <div class="step-arrow">→</div>
+                        <div class="step"><span class="step-number">2</span><span class="step-text">Escreve a mensagem</span></div>
+                        <div class="step-arrow">→</div>
+                        <div class="step"><span class="step-number">3</span><span class="step-text">Recebe com carinho 💝</span></div>
+                    </div>
+                </div>
+                <div class="correio-selecao">
+                    <div class="correio-group">
+                        <label class="correio-label">🎯 Pra quem é?</label>
+                        <div class="correio-opcoes" id="pacocaOcasioes">
+                            <button class="correio-opt active" data-ocasiao="Amizade"><span>🤝</span> Amizade</button>
+                            <button class="correio-opt" data-ocasiao="Crush"><span>💕</span> Crush</button>
+                            <button class="correio-opt" data-ocasiao="Aniversariante"><span>🎂</span> Aniversariante</button>
+                            <button class="correio-opt" data-ocasiao="Inimigo Elegante"><span>😈</span> Inimigo Elegante</button>
+                        </div>
+                        <div class="correio-precos-info">
+                            <span>💰 Cada um: <strong>R$ 1,25</strong></span>
+                            <span class="correio-inclui">(paçoca + mensagem + entrega)</span>
+                        </div>
+                    </div>
+                    <div class="correio-group">
+                        <label class="correio-label">📦 Quantidade</label>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="pacocaQtyMinus">−</button>
+                            <span class="qty-value" id="pacocaQtyValue">1</span>
+                            <button class="qty-btn" id="pacocaQtyPlus">+</button>
+                        </div>
+                    </div>
+                    <div class="correio-group">
+                        <label class="correio-label">💝 Escreve aqui sua mensagem</label>
+                        <textarea class="correio-textarea" id="pacocaMensagem" placeholder="Escreve com carinho..." maxlength="300"></textarea>
+                        <span class="correio-char-count" id="pacocaCharCount">0 / 300</span>
+                    </div>
+                    <div class="correio-resumo">
+                        <div class="resumo-item"><span>Produto</span><span>Paçoca 🥜</span></div>
+                        <div class="resumo-item"><span>Ocasião</span><span id="pacocaResumoOcasiao">Amizade 🤝</span></div>
+                        <div class="resumo-item"><span>Quantidade</span><span id="pacocaResumoQuantidade">1x</span></div>
+                        <div class="resumo-item"><span>Total</span><span class="resumo-total" id="pacocaResumoTotal">R$ 1,25</span></div>
+                        <div class="resumo-item resumo-mensagem"><span>Mensagem</span><span id="pacocaResumoMensagem">Nenhuma mensagem</span></div>
+                    </div>
+                </div>
+                <div class="modal-pedido-footer">
+                    <button class="btn btn-secondary" id="btnCancelarPacoca">Voltar</button>
+                    <button class="btn btn-primary" id="btnEnviarPacoca">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Enviar no WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOBRE -->
+        <section class="section about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content reveal">
+                        <span class="section-tag">💖 Quem somos</span>
+                        <h2 class="section-title">A história da <span class="pink">Candy's Castillo</span></h2>
+                        <p class="about-text">Tudo começou com uma ideia simples: fazer as pessoas sorrirem com um doce. A Candy's Castillo nasceu do amor por aqueles momentos gostosos da infância, quando um pirulito ou uma paçoca era capaz de transformar o dia inteiro.</p>
+                        <p class="about-text">Hoje, a gente mantém essa essência: doces feitos com carinho, preço justo e atendimento que é quase um abraço. Porque doce bom é doce com história.</p>
+                        <div class="about-features">
+                            <div class="feature"><span class="feature-icon">🎯</span> Preço justo</div>
+                            <div class="feature"><span class="feature-icon">💝</span> Feito com amor</div>
+                            <div class="feature"><span class="feature-icon">📦</span> Entrega rápida</div>
+                        </div>
+                    </div>
+                    <div class="about-visual reveal">
+                        <div class="about-card-deco">
+                            <span class="deco-emoji" style="--delay:0s">🍭</span>
+                            <span class="deco-emoji" style="--delay:0.5s">🥜</span>
+                            <span class="deco-emoji" style="--delay:1s">⭐</span>
+                            <span class="deco-emoji" style="--delay:0.3s">✨</span>
+                            <span class="deco-emoji" style="--delay:0.8s">🎀</span>
+                            <span class="deco-emoji" style="--delay:1.3s">🌈</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISSÃO -->
+        <section id="missao" class="section mission">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <span class="section-tag">✦ Nossa essência</span>
+                    <h2 class="section-title">O que move a <span class="pink">gente</span></h2>
+                </div>
+                <div class="mission-grid">
+                    <div class="mission-card reveal" style="--delay:0.1s">
+                        <div class="mission-icon">🎯</div>
+                        <h3>Missão</h3>
+                        <p>Levar um pouquinho de alegria e doçura pro dia a dia de cada pessoa, com produtos simples, feitos com carinho e a um preço que cabe no bolso.</p>
+                        <div class="mission-glow"></div>
+                    </div>
+                    <div class="mission-card reveal" style="--delay:0.2s">
+                        <div class="mission-icon">🔭</div>
+                        <h3>Visão</h3>
+                        <p>Ser aquele docinho que todo mundo lembra com carinho. A marca que transforma momentos comuns em memórias gostosas.</p>
+                        <div class="mission-glow"></div>
+                    </div>
+                    <div class="mission-card reveal" style="--delay:0.3s">
+                        <div class="mission-icon">💖</div>
+                        <h3>Valores</h3>
+                        <p><strong>Simplicidade:</strong> sem frescuras, só o que importa.<br>
+                        <strong>Transparência:</strong> preço claro, atendimento direto.<br>
+                        <strong>Paixão:</strong> cada doce é feito com vontade de encantar.</p>
+                        <div class="mission-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="section contact">
+            <div class="container">
+                <div class="contact-card reveal">
+                    <div class="contact-glow"></div>
+                    <div class="contact-pattern">
+                        <span>🍭</span><span>🥜</span><span>⭐</span><span>✨</span><span>🎀</span>
+                    </div>
+                    <div class="contact-content">
+                        <span class="section-tag">📱 Fala com a gente</span>
+                        <h2 class="section-title">Quer um <span class="pink">docinho</span>?</h2>
+                        <p class="contact-text">Tá com vontade de um pirulito? Quer surpreender alguém com uma paçoca? Ou só bater um papo? A gente adora conversar. Escolhe seu canal favorito!</p>
+                        <div class="contact-buttons">
+                            <a href="https://wa.me/5551998700161" target="_blank" rel="noopener" class="btn btn-wa btn-big">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                <span>WhatsApp</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="https://ig.me/m/candycastillo2026" target="_blank" rel="noopener" class="btn btn-ig btn-big" id="btnContatoInstagram">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                                <span>Instagram</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                        <p class="contact-obs">📌 Pedidos de combos também são pelo WhatsApp ou Instagram!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="footer-icon">
+                    <img src="img/candy-castillo-logo2.png" alt="Candy's Castillo" />
+                </span>
+                <span class="footer-name">Candy's Castillo</span>
+                <p class="footer-tagline">Doces que deixam o dia mais gostoso</p>
+            </div>
+            <div class="footer-links">
+                <a href="#inicio">Início</a>
+                <a href="#produtos">Doces</a>
+                <a href="#missao">Nossa vibe</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://wa.me/5551998700161" target="_blank" rel="noopener" class="social-link">
+                    <span>💬</span> WhatsApp
+                </a>
+                <a href="https://ig.me/m/candycastillo2026" target="_blank" rel="noopener" class="social-link">
+                    <span>📸</span> Instagram
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="footer-copy">© 2026 Candy's Castillo — Feito com amor e amendoim 🥜</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
